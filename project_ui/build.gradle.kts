@@ -46,4 +46,11 @@ android {
         minSdkVersion(24)
         targetSdkVersion(30)
     }
+    buildFeatures {
+        viewBinding = true
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
 }
