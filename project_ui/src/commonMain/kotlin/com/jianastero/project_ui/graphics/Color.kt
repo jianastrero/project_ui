@@ -24,13 +24,17 @@ class Color {
     var color: Int = 0
         set(value) {
             field = value
-            alpha = value.alpha()
+            if (value.alpha() != alpha) {
+                alpha = value.alpha()
+            }
         }
 
     var alpha: Int = 255
         set(value) {
             field = value
-            color = argb(value, color.red(), color.green(), color.blue())
+            if (argb(value, color.red(), color.green(), color.blue()) != color) {
+                color = argb(value, color.red(), color.green(), color.blue())
+            }
         }
 
     companion object {
