@@ -23,9 +23,10 @@ class MainActivity : AppCompatActivity() {
             )
             Text(
                 background = Background(color = Color(100, 255, 255, 0)),
+                margin = Box(32f),
+                padding = Box(8f),
                 text = "Jian James P. Astrero",
-                textColor = Color.BLACK,
-                padding = Box(8f)
+                textColor = Color.BLACK
             )
         }
     }
