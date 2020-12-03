@@ -6,5 +6,5 @@ class Theme(
     var accentColor: Color = Color.YELLOW,
     var textColor: Color = Color.BLACK,
     var backgroundColor: Color? = null,
-    var isLightMode: Boolean = true
+    var isDarkMode: Boolean = false
 )
