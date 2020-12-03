@@ -26,6 +26,7 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation("com.google.android.material:material:1.2.1")
+                implementation("com.github.jianastrero:kdimens-extensions:1.0")
             }
         }
         val androidTest by getting {
