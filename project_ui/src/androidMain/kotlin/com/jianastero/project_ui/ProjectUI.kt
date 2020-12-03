@@ -3,6 +3,7 @@ package com.jianastero.project_ui
 import android.app.Activity
 import android.content.Context
 import android.view.View
+import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -26,6 +27,10 @@ inline fun <reified T : UI> Activity.setContent(block: T.() -> Unit) {
     }
 
     val root: View = uiRoot.toView(this)
+    root.layoutParams = ViewGroup.MarginLayoutParams(
+        ViewGroup.LayoutParams.MATCH_PARENT,
+        ViewGroup.LayoutParams.MATCH_PARENT
+    )
 
     setContentView(root)
 }
