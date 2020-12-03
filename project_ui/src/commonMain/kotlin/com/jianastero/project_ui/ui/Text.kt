@@ -7,7 +7,7 @@ import com.jianastero.project_ui.vector.Box
 
 class Text(
     var text: String = "",
-    var textSize: Float = 16f,
+    var textSize: Float = 8f,
     var textColor: Color? = null,
     theme: Theme = Theme(),
     background: Background? = null,
