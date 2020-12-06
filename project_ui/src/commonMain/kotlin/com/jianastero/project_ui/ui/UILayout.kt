@@ -17,9 +17,10 @@ open class UILayout(
     layoutWidth: LayoutParam = DEFAULT_LAYOUT_WIDTH,
     layoutHeight: LayoutParam = DEFAULT_LAYOUT_HEIGHT,
     margin: Box = DEFAULT_MARGIN,
+    onClick: () -> Unit = { },
     padding: Box = DEFAULT_PADDING,
     var children: MutableList<UI> = DEFAULT_CHILDREN
-) : UI(theme, background, gravity, layoutWidth, layoutHeight, margin, padding) {
+) : UI(theme, background, gravity, layoutWidth, layoutHeight, margin, onClick, padding) {
 
     companion object {
 
@@ -38,6 +39,7 @@ open class UILayout(
         layoutWidth: LayoutParam = DEFAULT_LAYOUT_WIDTH,
         layoutHeight: LayoutParam = DEFAULT_LAYOUT_HEIGHT,
         margin: Box = DEFAULT_MARGIN,
+        onClick: () -> Unit = { },
         padding: Box = DEFAULT_PADDING,
         block: PUIText.() -> Unit = { }
     ): PUIText = PUIText(
@@ -50,6 +52,7 @@ open class UILayout(
         layoutWidth,
         layoutHeight,
         margin,
+        onClick,
         padding
     )
         .apply(block)

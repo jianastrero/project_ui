@@ -2,6 +2,7 @@ package com.jianastero.android_sample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.jianastero.project_ui.enumeration.Gravity
 import com.jianastero.project_ui.enumeration.Layout
 import com.jianastero.project_ui.graphics.Background
@@ -22,6 +23,9 @@ class MainActivity : AppCompatActivity() {
 
             Text(
                 background = Background(Color.WHITE),
+                onClick = {
+                      Log.d("JIAN", "Hello World! Clicked")
+                },
                 text = "Hello World!"
             )
 
@@ -31,6 +35,9 @@ class MainActivity : AppCompatActivity() {
                 layoutWidth = LayoutParam(Layout.MATCH_PARENT),
                 layoutHeight = LayoutParam(240),
                 margin = Box(32f),
+                onClick = {
+                    Log.d("JIAN", "Jian James P. Astrero Clicked")
+                },
                 padding = Box(8f),
                 text = "Jian James P. Astrero",
                 textColor = Color.BLUE,
@@ -44,6 +51,12 @@ class MainActivity : AppCompatActivity() {
                 layoutHeight = LayoutParam(Layout.MATCH_PARENT),
                 padding = Box(12f, 8f)
             ) {
+
+                ListItem(
+                    onClick = {
+                        Log.d("JIAN", "clicked: $it")
+                    }
+                )
 
             }
         }

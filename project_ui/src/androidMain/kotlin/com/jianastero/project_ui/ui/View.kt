@@ -24,4 +24,9 @@ internal fun <T : View> T.ui(ui: UI, block: (T) -> Unit = {}): T = this.also(blo
     }
     foregroundGravity = ui.gravity.gravity
     layoutParams = lp
+    ui.onClick?.let { onClick ->
+        setOnClickListener {
+            onClick()
+        }
+    }
 }

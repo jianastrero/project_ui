@@ -18,7 +18,7 @@ class AdapterList<T>(
     layoutHeight: LayoutParam = DEFAULT_LAYOUT_HEIGHT,
     margin: Box = DEFAULT_MARGIN,
     padding: Box = DEFAULT_PADDING
-) : UI(theme, background, gravity, layoutWidth, layoutHeight, margin, padding) {
+) : UI(theme, background, gravity, layoutWidth, layoutHeight, margin, { }, padding) {
 
     internal var _ui: (T) -> UI = {
         if (it is String) {
@@ -28,14 +28,14 @@ class AdapterList<T>(
         }
     }
 
-    internal var _onClick: (T) -> Unit = { }
+    internal var _onItemClick: ((T) -> Unit)? = null
 
     fun ListItem(
         ui: (T) -> UI = _ui,
-        onClick: (T) -> Unit = _onClick
+        onClick: ((T) -> Unit)? = null
     ) {
         _ui = ui
-        _onClick = onClick
+        _onItemClick = onClick
     }
 
 }

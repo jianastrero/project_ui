@@ -14,6 +14,7 @@ open class UI(
     var layoutWidth: LayoutParam = DEFAULT_LAYOUT_WIDTH,
     var layoutHeight: LayoutParam = DEFAULT_LAYOUT_HEIGHT,
     var margin: Box = DEFAULT_MARGIN,
+    var onClick: (() -> Unit)? = null,
     var padding: Box = DEFAULT_PADDING
 ) {
 

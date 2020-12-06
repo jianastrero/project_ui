@@ -33,10 +33,17 @@ internal fun <T> RecyclerView.apply(adapterList: AdapterList<T>) = this.ui(adapt
             ) { }
 
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-            val view: View = adapterList._ui(currentList[holder.adapterPosition]).toView(context)
+            val item: T = currentList[holder.adapterPosition]
+            val ui: UI = adapterList._ui(item)
+            val view: View = ui.toView(context)
             (holder.itemView as RelativeLayout).let {
                 it.removeAllViews()
                 it.addView(view)
+                adapterList._onItemClick?.let { onItemClick ->
+                    view.setOnClickListener {
+                        onItemClick(item)
+                    }
+                }
             }
         }
     }
