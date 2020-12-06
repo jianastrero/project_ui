@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.jianastero.project_ui.ui.*
 
 inline fun <reified T : UI> Activity.setContent(block: T.() -> Unit) {
@@ -38,6 +39,9 @@ inline fun <reified T : UI> Activity.setContent(block: T.() -> Unit) {
 fun <T : View, U : UI> U.toView(context: Context): T = when (this) {
     is Text -> {
         TextView(context).apply(this)
+    }
+    is AdapterList<*> -> {
+        RecyclerView(context).apply(this)
     }
     is StackLayout -> {
         LinearLayout(context).apply(this)

@@ -1,5 +1,6 @@
 package com.jianastero.project_ui.ui
 
+import com.jianastero.project_ui.enumeration.Direction
 import com.jianastero.project_ui.graphics.Background
 import com.jianastero.project_ui.graphics.Color
 import com.jianastero.project_ui.graphics.Theme
@@ -21,13 +22,13 @@ open class UILayout(
     }
 
     fun Text(
-        text: String = "",
-        textSize: Float = 16f,
-        textColor: Color? = null,
-        theme: Theme = Theme(),
-        background: Background? = null,
-        margin: Box = Box(0f),
-        padding: Box = Box(0f),
+        text: String = Text.DEFAULT_TEXT,
+        textSize: Float = Text.DEFAULT_TEXT_SIZE,
+        textColor: Color? = Text.DEFAULT_TEXT_COLOR,
+        theme: Theme = DEFAULT_THEME,
+        background: Background? = DEFAULT_BACKGROUND,
+        margin: Box = DEFAULT_MARGIN,
+        padding: Box = DEFAULT_PADDING,
         block: Text.() -> Unit = { }
     ): Text = com.jianastero.project_ui.ui.Text(text, textSize, textColor, theme, background, margin, padding)
         .apply(block)
@@ -35,4 +36,17 @@ open class UILayout(
             children.add(it)
         }
 
+    fun <T> AdapterList(
+        items: MutableList<T>,
+        direction: Direction = AdapterList.DEFAULT_DIRECTION,
+        theme: Theme = DEFAULT_THEME,
+        background: Background? = DEFAULT_BACKGROUND,
+        margin: Box = DEFAULT_MARGIN,
+        padding: Box = DEFAULT_PADDING,
+        block: AdapterList<T>.() -> Unit = { }
+    ): AdapterList<T> = com.jianastero.project_ui.ui.AdapterList(items, direction, theme, background, margin, padding)
+        .apply(block)
+        .also {
+            children.add(it)
+        }
 }
