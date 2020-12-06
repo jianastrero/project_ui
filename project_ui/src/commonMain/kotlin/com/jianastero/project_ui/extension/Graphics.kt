@@ -1,4 +1,4 @@
-package com.jianastero.project_ui.extensions
+package com.jianastero.project_ui.extension
 
 import com.jianastero.project_ui.graphics.Color
 

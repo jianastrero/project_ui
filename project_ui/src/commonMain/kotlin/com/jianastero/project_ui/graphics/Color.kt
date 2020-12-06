@@ -1,6 +1,6 @@
 package com.jianastero.project_ui.graphics
 
-import com.jianastero.project_ui.extensions.*
+import com.jianastero.project_ui.extension.*
 
 class Color {
 

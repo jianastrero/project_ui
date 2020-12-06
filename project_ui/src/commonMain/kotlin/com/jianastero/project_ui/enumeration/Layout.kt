@@ -5,4 +5,4 @@ enum class Layout {
     MATCH_PARENT
 }
 
-expect val Layout.platform: Int
+internal expect val Layout.platform: Int
