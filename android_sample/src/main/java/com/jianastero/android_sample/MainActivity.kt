@@ -2,12 +2,14 @@ package com.jianastero.android_sample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.jianastero.project_ui.enumeration.Gravity
+import com.jianastero.project_ui.enumeration.Layout
 import com.jianastero.project_ui.graphics.Background
 import com.jianastero.project_ui.graphics.Color
 import com.jianastero.project_ui.setContent
 import com.jianastero.project_ui.ui.StackLayout
-import com.jianastero.project_ui.ui.Text
 import com.jianastero.project_ui.vector.Box
+import com.jianastero.project_ui.vector.LayoutParam
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,10 +27,13 @@ class MainActivity : AppCompatActivity() {
 
             Text(
                 background = Background(color = Color(100, 255, 255, 0)),
+                gravity = Gravity.CENTER,
+                layoutWidth = LayoutParam(Layout.MATCH_PARENT),
+                layoutHeight = LayoutParam(240),
                 margin = Box(32f),
                 padding = Box(8f),
                 text = "Jian James P. Astrero",
-                textColor = Color.RED,
+                textColor = Color.BLUE,
                 textSize = 24f
             )
 
