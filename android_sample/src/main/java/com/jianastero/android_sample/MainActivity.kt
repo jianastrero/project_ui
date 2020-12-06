@@ -6,6 +6,7 @@ import com.jianastero.project_ui.graphics.Background
 import com.jianastero.project_ui.graphics.Color
 import com.jianastero.project_ui.setContent
 import com.jianastero.project_ui.ui.StackLayout
+import com.jianastero.project_ui.ui.Text
 import com.jianastero.project_ui.vector.Box
 
 class MainActivity : AppCompatActivity() {
@@ -18,16 +19,26 @@ class MainActivity : AppCompatActivity() {
             padding = Box(24f)
 
             Text(
-                text = "Hello World!",
-                textColor = Color.WHITE
+                background = Background(Color.WHITE),
+                text = "Hello World!"
             )
+
             Text(
                 background = Background(color = Color(100, 255, 255, 0)),
                 margin = Box(32f),
                 padding = Box(8f),
                 text = "Jian James P. Astrero",
-                textColor = Color.BLACK
+                textColor = Color.RED,
+                textSize = 24f
             )
+
+            AdapterList(
+                items = Array(100){ "Hello World!" }.toMutableList(),
+                background = Background(color = Color.WHITE),
+                padding = Box(12f, 8f)
+            ) {
+
+            }
         }
     }
 }
