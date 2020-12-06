@@ -6,12 +6,19 @@ import com.jianastero.project_ui.graphics.Theme
 import com.jianastero.project_ui.vector.Box
 
 open class UILayout(
-    theme: Theme = Theme(),
-    background: Background? = null,
-    margin: Box = Box(0f),
-    padding: Box = Box(0f),
-    var children: MutableList<UI> = mutableListOf()
+    theme: Theme = DEFAULT_THEME,
+    background: Background? = DEFAULT_BACKGROUND,
+    margin: Box = DEFAULT_MARGIN,
+    padding: Box = DEFAULT_PADDING,
+    var children: MutableList<UI> = DEFAULT_CHILDREN
 ) : UI(theme, background, margin, padding) {
+
+    companion object {
+
+        val DEFAULT_CHILDREN: MutableList<UI>
+            get() = mutableListOf()
+
+    }
 
     fun Text(
         text: String = "",

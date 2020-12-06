@@ -5,8 +5,22 @@ import com.jianastero.project_ui.graphics.Theme
 import com.jianastero.project_ui.vector.Box
 
 open class UI(
-    var theme: Theme = Theme(),
-    var background: Background? = null,
-    var margin: Box = Box(0f),
-    var padding: Box = Box(0f)
-)
+    var theme: Theme = DEFAULT_THEME,
+    var background: Background? = DEFAULT_BACKGROUND,
+    var margin: Box = DEFAULT_MARGIN,
+    var padding: Box = DEFAULT_PADDING
+) {
+
+    companion object {
+
+        val DEFAULT_THEME: Theme
+            get() = Theme()
+        val DEFAULT_BACKGROUND: Background? = null
+        val DEFAULT_MARGIN: Box
+            get() = Box(0f)
+        val DEFAULT_PADDING: Box
+            get() = Box(0f)
+
+    }
+
+}
