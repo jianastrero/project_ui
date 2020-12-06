@@ -38,8 +38,10 @@ class MainActivity : AppCompatActivity() {
             )
 
             AdapterList(
-                items = Array(100){ "Hello World!" }.toMutableList(),
-                background = Background(color = Color.WHITE),
+                items = Array(100){ "Hello World $it!" }.toMutableList(),
+                background = Background(color = Color.CYAN),
+                layoutWidth = LayoutParam(Layout.MATCH_PARENT),
+                layoutHeight = LayoutParam(Layout.MATCH_PARENT),
                 padding = Box(12f, 8f)
             ) {
 
