@@ -6,6 +6,7 @@ import com.jianastero.project_ui.enumeration.Gravity
 import com.jianastero.project_ui.graphics.Background
 import com.jianastero.project_ui.graphics.Theme
 import com.jianastero.project_ui.vector.Box
+import com.jianastero.project_ui.vector.LayoutParam
 
 class AdapterList<T>(
     var items: MutableList<T> = mutableListOf(),
@@ -13,9 +14,11 @@ class AdapterList<T>(
     theme: Theme = DEFAULT_THEME,
     background: Background? = DEFAULT_BACKGROUND,
     gravity: Gravity = Gravity.DEFAULT_GRAVITY,
+    layoutWidth: LayoutParam = DEFAULT_LAYOUT_WIDTH,
+    layoutHeight: LayoutParam = DEFAULT_LAYOUT_HEIGHT,
     margin: Box = DEFAULT_MARGIN,
     padding: Box = DEFAULT_PADDING
-) : UI(theme, background, gravity, margin, padding) {
+) : UI(theme, background, gravity, layoutWidth, layoutHeight, margin, padding) {
 
     internal var _ui: (T) -> UI = {
         if (it is String) {

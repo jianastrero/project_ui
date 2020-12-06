@@ -8,13 +8,12 @@ import com.jianastrero.kdimens_extensions.dp
 
 internal fun <T : View> T.ui(ui: UI, block: (T) -> Unit = {}): T = this.also(block).apply {
     // TODO("Theme")
+    val lp = ViewGroup.MarginLayoutParams(
+        ui.layoutWidth._value,
+        ui.layoutHeight._value
+    )
     ui.margin.let { box ->
-        layoutParams = ViewGroup.MarginLayoutParams(
-            ViewGroup.LayoutParams.WRAP_CONTENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
-        ).also {
-            it.setMargins(box.left.toInt(), box.top.toInt(), box.right.toInt(), box.bottom.toInt())
-        }
+        lp.setMargins(box.left.toInt(), box.top.toInt(), box.right.toInt(), box.bottom.toInt())
     }
     ui.padding.let {
         setPadding(it.left.dp.toInt(), it.top.dp.toInt(), it.right.dp.toInt(), it.bottom.dp.toInt())
@@ -24,4 +23,5 @@ internal fun <T : View> T.ui(ui: UI, block: (T) -> Unit = {}): T = this.also(blo
         bg.image?.let { background = BitmapDrawable(context.resources, context.assets.open(it)) }
     }
     foregroundGravity = ui.gravity.gravity
+    layoutParams = lp
 }

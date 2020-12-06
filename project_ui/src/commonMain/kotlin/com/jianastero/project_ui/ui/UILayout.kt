@@ -6,6 +6,7 @@ import com.jianastero.project_ui.graphics.Background
 import com.jianastero.project_ui.graphics.Color
 import com.jianastero.project_ui.graphics.Theme
 import com.jianastero.project_ui.vector.Box
+import com.jianastero.project_ui.vector.LayoutParam
 import com.jianastero.project_ui.ui.Text as PUIText
 import com.jianastero.project_ui.ui.AdapterList as PUIAdapterList
 
@@ -13,10 +14,12 @@ open class UILayout(
     theme: Theme = DEFAULT_THEME,
     background: Background? = DEFAULT_BACKGROUND,
     gravity: Gravity = Gravity.DEFAULT_GRAVITY,
+    layoutWidth: LayoutParam = DEFAULT_LAYOUT_WIDTH,
+    layoutHeight: LayoutParam = DEFAULT_LAYOUT_HEIGHT,
     margin: Box = DEFAULT_MARGIN,
     padding: Box = DEFAULT_PADDING,
     var children: MutableList<UI> = DEFAULT_CHILDREN
-) : UI(theme, background, gravity, margin, padding) {
+) : UI(theme, background, gravity, layoutWidth, layoutHeight, margin, padding) {
 
     companion object {
 
@@ -32,10 +35,23 @@ open class UILayout(
         theme: Theme = DEFAULT_THEME,
         background: Background? = DEFAULT_BACKGROUND,
         gravity: Gravity = Gravity.DEFAULT_GRAVITY,
+        layoutWidth: LayoutParam = DEFAULT_LAYOUT_WIDTH,
+        layoutHeight: LayoutParam = DEFAULT_LAYOUT_HEIGHT,
         margin: Box = DEFAULT_MARGIN,
         padding: Box = DEFAULT_PADDING,
         block: PUIText.() -> Unit = { }
-    ): PUIText = PUIText(text, textSize, textColor, theme, background, gravity, margin, padding)
+    ): PUIText = PUIText(
+        text,
+        textSize,
+        textColor,
+        theme,
+        background,
+        gravity,
+        layoutWidth,
+        layoutHeight,
+        margin,
+        padding
+    )
         .apply(block)
         .also {
             children.add(it)
@@ -47,10 +63,22 @@ open class UILayout(
         theme: Theme = DEFAULT_THEME,
         background: Background? = DEFAULT_BACKGROUND,
         gravity: Gravity = Gravity.DEFAULT_GRAVITY,
+        layoutWidth: LayoutParam = DEFAULT_LAYOUT_WIDTH,
+        layoutHeight: LayoutParam = DEFAULT_LAYOUT_HEIGHT,
         margin: Box = DEFAULT_MARGIN,
         padding: Box = DEFAULT_PADDING,
         block: PUIAdapterList<T>.() -> Unit = { }
-    ): PUIAdapterList<T> = PUIAdapterList(items, direction, theme, background, gravity, margin, padding)
+    ): PUIAdapterList<T> = PUIAdapterList(
+        items,
+        direction,
+        theme,
+        background,
+        gravity,
+        layoutWidth,
+        layoutHeight,
+        margin,
+        padding
+    )
         .apply(block)
         .also {
             children.add(it)
