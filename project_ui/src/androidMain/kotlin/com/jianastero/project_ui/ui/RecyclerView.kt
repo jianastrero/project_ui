@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.jianastero.project_ui.enumeration.gravity
 import com.jianastero.project_ui.enumeration.orientation
 import com.jianastero.project_ui.toView
 

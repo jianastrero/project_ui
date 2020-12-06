@@ -1,5 +1,6 @@
 package com.jianastero.project_ui.ui
 
+import com.jianastero.project_ui.enumeration.Gravity
 import com.jianastero.project_ui.graphics.Background
 import com.jianastero.project_ui.graphics.Color
 import com.jianastero.project_ui.graphics.Theme
@@ -11,9 +12,10 @@ class Text(
     var textColor: Color? = DEFAULT_TEXT_COLOR,
     theme: Theme = DEFAULT_THEME,
     background: Background? = DEFAULT_BACKGROUND,
+    gravity: Gravity = Gravity.DEFAULT_GRAVITY,
     margin: Box = DEFAULT_MARGIN,
     padding: Box = DEFAULT_PADDING
-) : UI(theme, background, margin, padding) {
+) : UI(theme, background, gravity, margin, padding) {
 
     companion object {
 
