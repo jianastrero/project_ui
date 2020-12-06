@@ -3,13 +3,11 @@ package com.jianastero.project_ui.ui
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RelativeLayout
-import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.jianastero.project_ui.enumeration.orientation
-import com.jianastero.project_ui.graphics.Color
 import com.jianastero.project_ui.toView
 
 internal fun <T> RecyclerView.apply(adapterList: AdapterList<T>) = this.ui(adapterList) { recyclerView ->
