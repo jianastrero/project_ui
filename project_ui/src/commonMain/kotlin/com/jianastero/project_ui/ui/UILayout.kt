@@ -8,6 +8,7 @@ import com.jianastero.project_ui.graphics.Theme
 import com.jianastero.project_ui.vector.Box
 import com.jianastero.project_ui.vector.LayoutParam
 import com.jianastero.project_ui.ui.Text as PUIText
+import com.jianastero.project_ui.ui.Button as PUIButton
 import com.jianastero.project_ui.ui.AdapterList as PUIAdapterList
 
 open class UILayout(
@@ -43,6 +44,37 @@ open class UILayout(
         padding: Box = DEFAULT_PADDING,
         block: PUIText.() -> Unit = { }
     ): PUIText = PUIText(
+        text,
+        textSize,
+        textColor,
+        theme,
+        background,
+        gravity,
+        layoutWidth,
+        layoutHeight,
+        margin,
+        onClick,
+        padding
+    )
+        .apply(block)
+        .also {
+            children.add(it)
+        }
+
+    fun Button(
+        text: String = PUIText.DEFAULT_TEXT,
+        textSize: Float = PUIText.DEFAULT_TEXT_SIZE,
+        textColor: Color? = PUIText.DEFAULT_TEXT_COLOR,
+        theme: Theme = DEFAULT_THEME,
+        background: Background? = DEFAULT_BACKGROUND,
+        gravity: Gravity = Gravity.CENTER,
+        layoutWidth: LayoutParam = DEFAULT_LAYOUT_WIDTH,
+        layoutHeight: LayoutParam = DEFAULT_LAYOUT_HEIGHT,
+        margin: Box = DEFAULT_MARGIN,
+        onClick: () -> Unit = { },
+        padding: Box = DEFAULT_PADDING,
+        block: PUIButton.() -> Unit = { }
+    ): PUIButton = PUIButton(
         text,
         textSize,
         textColor,

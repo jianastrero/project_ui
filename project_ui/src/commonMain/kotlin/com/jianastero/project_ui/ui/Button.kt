@@ -7,26 +7,16 @@ import com.jianastero.project_ui.graphics.Theme
 import com.jianastero.project_ui.vector.Box
 import com.jianastero.project_ui.vector.LayoutParam
 
-open class Text(
-    var text: String = DEFAULT_TEXT,
-    var textSize: Float = DEFAULT_TEXT_SIZE,
-    var textColor: Color? = DEFAULT_TEXT_COLOR,
+class Button(
+    text: String = DEFAULT_TEXT,
+    textSize: Float = DEFAULT_TEXT_SIZE,
+    textColor: Color? = DEFAULT_TEXT_COLOR,
     theme: Theme = DEFAULT_THEME,
     background: Background? = DEFAULT_BACKGROUND,
-    gravity: Gravity = Gravity.DEFAULT_GRAVITY,
+    gravity: Gravity = Gravity.CENTER,
     layoutWidth: LayoutParam = DEFAULT_LAYOUT_WIDTH,
     layoutHeight: LayoutParam = DEFAULT_LAYOUT_HEIGHT,
     margin: Box = DEFAULT_MARGIN,
     onClick: () -> Unit = { },
     padding: Box = DEFAULT_PADDING
-) : UI(theme, background, gravity, layoutWidth, layoutHeight, margin, onClick, padding) {
-
-    companion object {
-
-        const val DEFAULT_TEXT: String = ""
-        const val DEFAULT_TEXT_SIZE: Float = 16f
-        val DEFAULT_TEXT_COLOR: Color? = null
-
-    }
-
-}
+) : Text(text, textSize, textColor, theme, background, gravity, layoutWidth, layoutHeight, margin, onClick, padding)
