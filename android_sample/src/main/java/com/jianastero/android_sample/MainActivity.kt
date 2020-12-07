@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
 
         setContent<StackLayout> {
 
-            background = Background(image = "img/sample_bg.jpg")
             padding = Box(24f)
 
             Text(
@@ -29,8 +28,8 @@ class MainActivity : AppCompatActivity() {
                 text = "Hello World!"
             )
 
-            Text(
-                background = Background(color = Color(100, 255, 255, 0)),
+            Button(
+                background = Background(color = Color.BLUE),
                 gravity = Gravity.CENTER,
                 layoutWidth = LayoutParam(Layout.MATCH_PARENT),
                 layoutHeight = LayoutParam(240),
@@ -40,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                 },
                 padding = Box(8f),
                 text = "Jian James P. Astrero",
-                textColor = Color.BLUE,
+                textColor = Color.WHITE,
                 textSize = 24f
             )
 
