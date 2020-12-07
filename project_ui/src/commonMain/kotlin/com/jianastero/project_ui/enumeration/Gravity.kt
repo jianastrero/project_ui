@@ -19,3 +19,5 @@ enum class Gravity {
 
     }
 }
+
+internal expect val Gravity.platform: Int

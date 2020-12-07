@@ -1,7 +1,7 @@
 package com.jianastero.project_ui.ui
 
 import android.widget.TextView
-import com.jianastero.project_ui.enumeration.gravity
+import com.jianastero.project_ui.enumeration.platform
 
 internal fun TextView.apply(text: Text): TextView = this.ui(text) { textView ->
 
@@ -10,6 +10,6 @@ internal fun TextView.apply(text: Text): TextView = this.ui(text) { textView ->
         textView.setTextColor(it.color)
     }
     textView.textSize = text.textSize
-    textView.gravity = text.gravity.gravity
+    textView.gravity = text.gravity.platform
 
 }

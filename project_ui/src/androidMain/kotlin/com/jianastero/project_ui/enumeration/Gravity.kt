@@ -2,7 +2,7 @@ package com.jianastero.project_ui.enumeration
 
 import android.view.Gravity as AndroidGravity
 
-internal val Gravity.gravity: Int
+internal actual val Gravity.platform: Int
     get() = when(this) {
         Gravity.START -> AndroidGravity.START
         Gravity.TOP -> AndroidGravity.TOP
