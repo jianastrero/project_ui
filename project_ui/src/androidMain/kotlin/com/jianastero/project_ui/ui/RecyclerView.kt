@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.jianastero.project_ui.enumeration.orientation
+import com.jianastero.project_ui.enumeration.platform
 import com.jianastero.project_ui.toView
 
 internal fun <T> RecyclerView.apply(adapterList: AdapterList<T>) = this.ui(adapterList) { recyclerView ->
@@ -48,7 +48,7 @@ internal fun <T> RecyclerView.apply(adapterList: AdapterList<T>) = this.ui(adapt
     }
 
     val gridLayoutManager: GridLayoutManager = GridLayoutManager(context, 1).also {
-        it.orientation = adapterList.direction.orientation
+        it.orientation = adapterList.direction.platform
     }
 
     layoutManager = gridLayoutManager

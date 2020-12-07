@@ -10,3 +10,5 @@ enum class Direction {
 
     }
 }
+
+internal expect val Direction.platform: Int
